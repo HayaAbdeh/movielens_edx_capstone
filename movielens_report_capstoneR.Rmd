@@ -261,7 +261,6 @@ mu <- mean(edx$rating)
 ## Including Plots
 
 ```{r Lambdas vs RMSEs, echo=FALSE}
-#qplot(lambda, rmses)
 
 # plot lambda's results
 
@@ -294,7 +293,6 @@ results <- results %>% add_row(model="Regularized Movie Term", RMSE=rmse_regular
 ```
 
 ```{r regularized movies and user term, echo=TRUE}
-#lamd <-lambda[which.min(rmses)]
 
 # Since we see before that the movie and user bias model had the acceptable RMSE ,, we will ses if the regularization technique will improve the RMSE in movies and user term
 
@@ -330,8 +328,6 @@ RMSE(predict_rat, validation$rating)
 
 # Now we plot the Lambdas vs RMSEs for the Regularized Movie and user bias Term
 ```{r Lambdas vs RMSEs, echo=FALSE}
-#qplot(lambda, rmses)
-
 # plot lambda's results
 
 dframe <- data.frame(RMSE = rmses, lambdas = lambda)
@@ -407,7 +403,6 @@ RMSE(predict_rat, validation$rating)
 
 # Now we plot the Lambdas vs RMSEs for the Regularized Movie and user and genres bias Term
 ```{r Lambdas vs RMSEs, echo=FALSE}
-#qplot(lambda, rmses)
 
 # plot lambda's results
 
@@ -440,8 +435,17 @@ results <- results %>% add_row(model="Regularized Movie and User and Genres Term
 
 ```
 
-## Results and conclusions:
 
+
+```{r print result table, echo=TRUE}
+
+# printing the results table to show the RMSE values
+print(results)
+
+```
+
+## Results and conclusions:
+#as a result we find that the minimum RMSE is 0.8644 which we optained from regularized movie and user and genres parameter model
 ## As a conclusion we find that The linear model is effective way to make prediction on movie ratings as well RMSE had been minimized since we regularized the biased model,, 
 #so after training different models, we find out that movie_id  and user_id gives a desireable value of RMSE Without regularization, but the best model when applying regularization and adding the genres predictor, it make possible to reach the lowest RSME which is the best result for the trained models.
-
+## and as a future work,, more machine learning models going to work on trying to find if we can get a value of RMSE less than what we tried in the previews models.
