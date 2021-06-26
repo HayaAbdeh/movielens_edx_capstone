@@ -99,7 +99,7 @@ edx %>% filter(genres %like% "Romance") %>% summarize(n())
 
 ```{r model, echo=TRUE}
 mu <- mean(edx$rating)
-RMSE(validation$rating, mu)
+rmse <- RMSE(validation$rating, mu)
 
 # We make a data frame to save the results of RMSE
 results <- data.frame(model="Mean Of edx Model", RMSE=rmse)
